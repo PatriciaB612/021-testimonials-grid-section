@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 0.8125rem;
+  background-color: hsl(210 46% 95%);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+img {
+  width: 1.75rem;
+  border-radius: 50%;
+}
+
+/* typography */
+
+.name {
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+.status {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.main-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.secondary-text {
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* layout */
+
+.testimonials-grid {
+  display: grid;
+  grid-row-gap: 2em;
+  padding-block: 2rem;
+  width: min(95%, 65rem);
+}
+
+.testimonial {
+  padding: 2em;
+  border-radius: 5px;
+}
+
+.user-info {
+  display: flex;
+  gap: 0.5em;
+}
+
+.user-info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+/* styling the content*/
+
+.bg-quote {
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-color: hsl(263 55% 52%);
+  background-position: top right 20%;
+  color: hsl(0, 0%, 81%);
+}
+
+.bg-light {
+  background-color: #fff;
+  color: hsl(219, 29%, 14%);
+}
+
+.bg-light .secondary-text {
+  color: hsl(217 19% 35%);
+}
+
+.bg-semi-dark {
+  background-color: hsl(217 19% 35%);
+  color: hsl(0, 0%, 81%);
+}
+
+.bg-dark {
+  background-color: hsl(219 29% 14%);
+  color: hsl(0, 0%, 81%);
+}
+
+/* big screens layout*/
+
+@media (min-width: 600px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2em;
+  }
+
+  .bg-quote {
+    grid-column: span 2;
+  }
+
+  .bg-semi-dark {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .bg-dark {
+    grid-column: span 3;
+  }
+
+  .testimonial:last-child {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2em;
+  }
+
+  .bg-semi-dark {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .bg-dark {
+    grid-column: span 2;
+  }
+
+  .testimonial:last-child {
+    grid-column: 4;
+  }
+}
