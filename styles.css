@@ -46,7 +46,7 @@ img {
   display: grid;
   grid-row-gap: 2em;
   padding-block: 2rem;
-  width: min(95%, 65rem);
+  width: min(90%, 65rem);
 }
 
 .testimonial {
